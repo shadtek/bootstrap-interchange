@@ -1,12 +1,20 @@
 meta.foundation-version {
   font-family: "/5.5.2/"; }
 
-meta.foundation-mq-small {
+meta.foundation-mq-xsmall {
   font-family: "/only screen/";
   width: 0; }
 
+meta.foundation-mq-xsmall-only {
+  font-family: "/only screen and (max-width: 575px)/";
+  width: 0; }
+
+meta.foundation-mq-small {
+  font-family: "/only screen and (min-width: 576px)/";
+  width: 0; }
+
 meta.foundation-mq-small-only {
-  font-family: "/only screen and (max-width: 767px)/";
+  font-family: "/only screen and (min-width: 576px) and (max-width: 767px)/";
   width: 0; }
 
 meta.foundation-mq-medium {
@@ -34,4 +42,4 @@ meta.foundation-mq-xlarge-only {
   width: 1200px; }
 
 meta.foundation-data-attribute-namespace {
-  font-family: false; } 
+  font-family: false; }
