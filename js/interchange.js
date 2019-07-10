@@ -16,8 +16,10 @@
 
       named_queries : {
         'default'     : 'only screen',
-        'small'       : 'only screen',
-        'small-only'  : 'only screen and (max-width: 767px)',
+        'xsmall'      : 'only screen',
+        'xsmall-only' : 'only screen and (max-width: 575px)',
+        'small'       : 'only screen and (min-width: 576px)',
+        'small-only'  : 'only screen and (min-width: 576px) and (max-width: 767px)',
         'medium'      : 'only screen and (min-width: 768px)',
         'medium-only' : 'only screen and (min-width: 768px) and (max-width: 991px)',
         'large'       : 'only screen and (min-width: 992px)',
@@ -353,4 +355,4 @@
 
   };
 
-}(jQuery, window, window.document)); 
+}(jQuery, window, window.document));
