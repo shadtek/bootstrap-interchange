@@ -1,43 +1,43 @@
 meta.foundation-version {
   font-family: "/5.5.2/"; }
 
-meta.foundation-mq-xsmall {
+meta.foundation-mq-xs {
   font-family: "/only screen/";
   width: 0; }
 
-meta.foundation-mq-xsmall-only {
+meta.foundation-mq-xs-only {
   font-family: "/only screen and (max-width: 575px)/";
   width: 0; }
 
-meta.foundation-mq-small {
+meta.foundation-mq-sm {
   font-family: "/only screen and (min-width: 576px)/";
   width: 0; }
 
-meta.foundation-mq-small-only {
+meta.foundation-mq-sm-only {
   font-family: "/only screen and (min-width: 576px) and (max-width: 767px)/";
   width: 0; }
 
-meta.foundation-mq-medium {
+meta.foundation-mq-md {
   font-family: "only screen and (min-width: 768px)";
   width: 768px; }
 
-meta.foundation-mq-medium-only {
+meta.foundation-mq-md-only {
   font-family: "/only screen and (min-width: 768px) and (max-width: 991px)/";
   width: 768px; }
 
-meta.foundation-mq-large {
+meta.foundation-mq-lg {
   font-family: "/only screen and (min-width: 992px)/";
   width: 992px; }
 
-meta.foundation-mq-large-only {
+meta.foundation-mq-lg-only {
   font-family: "/only screen and (min-width: 992px) and (max-width: 1199px)/";
   width: 992px; }
 
-meta.foundation-mq-xlarge {
+meta.foundation-mq-xl {
   font-family: "/only screen and (min-width: 1200px)/";
   width: 1200px; }
 
-meta.foundation-mq-xlarge-only {
+meta.foundation-mq-xl-only {
   font-family: "/only screen and (min-width: 1200px)/";
   width: 1200px; }
 

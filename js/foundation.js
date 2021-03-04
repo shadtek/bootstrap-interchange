@@ -4,6 +4,9 @@
  * Copyright 2014, ZURB
  * Free to use under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * README: works as a background image or as a src setter on images
+ * https://github.com/shadtek/bootstrap4-interchange/blob/master/index.html
 */
 
 (function ($, window, document, undefined) {
@@ -21,16 +24,16 @@
   };
 
   header_helpers([
-    'foundation-mq-xsmall',
-    'foundation-mq-xsmall-only',
-    'foundation-mq-small',
-    'foundation-mq-small-only',
-    'foundation-mq-medium',
-    'foundation-mq-medium-only',
-    'foundation-mq-large',
-    'foundation-mq-large-only',
-    'foundation-mq-xlarge',
-    'foundation-mq-xlarge-only',
+    'foundation-mq-xs',
+    'foundation-mq-xs-only',
+    'foundation-mq-sm',
+    'foundation-mq-sm-only',
+    'foundation-mq-md',
+    'foundation-mq-md-only',
+    'foundation-mq-lg',
+    'foundation-mq-lg-only',
+    'foundation-mq-xl',
+    'foundation-mq-xl-only',
     'foundation-data-attribute-namespace']);
 
   // Enable FastClick if present
@@ -297,16 +300,16 @@
     version : '5.5.2',
 
     media_queries : {
-      'xsmall'       : S('.foundation-mq-small').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'xsmall-only'  : S('.foundation-mq-small-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'small'       : S('.foundation-mq-small').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'small-only'  : S('.foundation-mq-small-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'medium'      : S('.foundation-mq-medium').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'medium-only' : S('.foundation-mq-medium-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'large'       : S('.foundation-mq-large').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'large-only'  : S('.foundation-mq-large-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'xlarge'      : S('.foundation-mq-xlarge').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
-      'xlarge-only' : S('.foundation-mq-xlarge-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, '')
+      'xs'       : S('.foundation-mq-xs').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
+      'xs-only'  : S('.foundation-mq-xs-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
+      'sm'       : S('.foundation-mq-sm').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
+      'sm-only'  : S('.foundation-mq-sm-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
+      'md'      : S('.foundation-mq-md').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
+      'md-only' : S('.foundation-mq-md-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
+      'lg'       : S('.foundation-mq-lg').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
+      'lg-only'  : S('.foundation-mq-lg-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
+      'xl'      : S('.foundation-mq-xl').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
+      'xl-only' : S('.foundation-mq-xl-only').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, '')
     },
 
     stylesheet : $('<style></style>').appendTo('head')[0].sheet,
@@ -673,36 +676,36 @@
       // Returns:
       //    (Boolean): Whether the media query passes or not
 
-      is_small_up : function () {
-        return this.match(Foundation.media_queries.small);
+      is_sm_up : function () {
+        return this.match(Foundation.media_queries.sm);
       },
 
-      is_medium_up : function () {
-        return this.match(Foundation.media_queries.medium);
+      is_md_up : function () {
+        return this.match(Foundation.media_queries.md);
       },
 
-      is_large_up : function () {
-        return this.match(Foundation.media_queries.large);
+      is_lg_up : function () {
+        return this.match(Foundation.media_queries.lg);
       },
 
-      is_xlarge_up : function () {
-        return this.match(Foundation.media_queries.xlarge);
+      is_xl_up : function () {
+        return this.match(Foundation.media_queries.xl);
       },
 
-      is_small_only : function () {
-        return !this.is_medium_up() && !this.is_large_up() && !this.is_xlarge_up();
+      is_sm_only : function () {
+        return !this.is_md_up() && !this.is_lg_up() && !this.is_xl_up();
       },
 
-      is_medium_only : function () {
-        return this.is_medium_up() && !this.is_large_up() && !this.is_xlarge_up();
+      is_md_only : function () {
+        return this.is_md_up() && !this.is_lg_up() && !this.is_xl_up();
       },
 
-      is_large_only : function () {
-        return this.is_medium_up() && this.is_large_up() && !this.is_xlarge_up();
+      is_lg_only : function () {
+        return this.is_md_up() && this.is_lg_up() && !this.is_xl_up();
       },
 
-      is_xlarge_only : function () {
-        return this.is_medium_up() && this.is_large_up() && this.is_xlarge_up();
+      is_xl_only : function () {
+        return this.is_md_up() && this.is_lg_up() && this.is_xl_up();
       },
     }
   };
@@ -731,16 +734,16 @@
 
       named_queries : {
         'default'     : 'only screen',
-        'xsmall'      : 'only screen',
-        'xsmall-only' : 'only screen and (max-width: 575px)',
-        'small'       : 'only screen and (min-width: 576px)',
-        'small-only'  : 'only screen and (min-width: 576px) and (max-width: 767px)',
-        'medium'      : 'only screen and (min-width: 768px)',
-        'medium-only' : 'only screen and (min-width: 768px) and (max-width: 991px)',
-        'large'       : 'only screen and (min-width: 992px)',
-        'large-only'  : 'only screen and (min-width: 992px) and (max-width: 1199px)',
-        'xlarge'      : 'only screen and (min-width: 1200px)',
-        'xlarge-only' : 'only screen and (min-width: 1200px)',
+        'xs'      : 'only screen',
+        'xs-only' : 'only screen and (max-width: 575px)',
+        'sm'       : 'only screen and (min-width: 576px)',
+        'sm-only'  : 'only screen and (min-width: 576px) and (max-width: 767px)',
+        'md'      : 'only screen and (min-width: 768px)',
+        'md-only' : 'only screen and (min-width: 768px) and (max-width: 991px)',
+        'lg'       : 'only screen and (min-width: 992px)',
+        'lg-only'  : 'only screen and (min-width: 992px) and (max-width: 1199px)',
+        'xl'      : 'only screen and (min-width: 1200px)',
+        'xl-only' : 'only screen and (min-width: 1200px)',
         'retina'      : 'only screen and (-webkit-min-device-pixel-ratio: 2),' +
           'only screen and (min--moz-device-pixel-ratio: 2),' +
           'only screen and (-o-min-device-pixel-ratio: 2/1),' +
@@ -1071,3 +1074,5 @@
   };
 
 }(jQuery, window, window.document));
+
+jQuery(document).foundation();
